@@ -1,3 +1,5 @@
+import java.io.FileInputStream;
+
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,8 +18,8 @@ public class Main extends Application {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			
-			SplitPane root = (SplitPane) loader.load(getClass().getResource(
-					"Player.fxml").openStream());
+			SplitPane root = (SplitPane) loader.load(new FileInputStream(
+					"fxml/Player.fxml"));
 			
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
